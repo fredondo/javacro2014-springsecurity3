@@ -5,8 +5,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
+	<http pattern="/pages/*" security="none"/>
+	<http pattern="/images/*" security="none"/>
+	<http pattern="/css/*" security="none"/>
+	
 	<http auto-config="true">
 		<intercept-url pattern="/**" access="ROLE_SPECIAL_AGENT"/>
+		<form-login login-page="/pages/custom-login.jsp" 
+			authentication-failure-url="/pages/custom-login.jsp?login_error" />
+		<logout logout-success-url="/pages/disconnected.jsp"/>
 	</http>
 	
 	<authentication-manager>

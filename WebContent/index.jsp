@@ -15,8 +15,11 @@
 
 <h1>Main Page</h1>
 <p>
-Everybody can see this resource.
+Only agents can see this resource. Welcome <%= request.getUserPrincipal().getName() %>
+<a href="<c:url value='/j_spring_security_logout'/>">logout</a>
 </p>
+<hr/>
+<%= request.getUserPrincipal() %>
 <p>
 <a href="<c:url value='/xfiles/show/all'/>">show files</a>
 </p>
