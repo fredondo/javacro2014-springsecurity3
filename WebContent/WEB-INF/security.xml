@@ -14,6 +14,7 @@
 		<form-login login-page="/pages/custom-login.jsp" 
 			authentication-failure-url="/pages/custom-login.jsp?login_error" />
 		<logout logout-success-url="/pages/disconnected.jsp"/>
+		<remember-me key="xfiles" token-validity-seconds="86400" />
 	</http>
 	
 	<authentication-manager>
