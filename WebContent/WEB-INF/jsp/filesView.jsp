@@ -11,8 +11,7 @@
 	<div id="content">
 
 		<h1>
-			X Files for
-			<sec:authentication property="principal.username" />
+			X Files for	<sec:authentication property="principal.username" />
 		</h1>
 		<a href="<c:url value='/index.jsp'/>">Index</a><br> <br>
 
@@ -29,15 +28,17 @@
 			<c:forEach var="file" items="${files}">
 				<tr valign="top">
 					<td>${file.id}</td>
-					<td align="center"><img src="<c:url value='/${file.image}'/>"
-						height="100px" /></td>
+					<td align="center"><img src="<c:url value='/${file.image}'/>" height="100px" /></td>
 					<td align="right"><b>${file.title}</b></td>
 					<td width="40%"><font size="-1">${file.report}</font></td>
 					<td align="right"><b>${file.investigator}</b></td>
 					<td align="center"><b>${file.classified}</b></td>
-					<td><a href="<c:url value='/xfiles/show/${file.id}'/>">show</a>
-						<a href="<c:url value='/xfiles/classify?id=${file.id}'/>">classify</a>
-						<a href="<c:url value='/xfiles/declassify?id=${file.id}'/>">declassify</a>
+					<td>
+						<a href="<c:url value='/xfiles/show/${file.id}'/>">show</a>
+						<sec:authorize ifAnyGranted="ROLE_ESPECIAL_AGENT,ROLE_ASSISTANT_DIRECTOR">
+							<a href="<c:url value='/xfiles/classify?id=${file.id}'/>">classify</a>
+							<a href="<c:url value='/xfiles/declassify?id=${file.id}'/>">declassify</a>
+						</sec:authorize>
 					</td>
 				</tr>
 			</c:forEach>
