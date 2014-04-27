@@ -18,11 +18,14 @@
 	
 	<authentication-manager>
 		<authentication-provider>
+			<password-encoder hash="md5">
+				<salt-source user-property="username" />
+			</password-encoder>
 			<user-service>
-				<user name="Fernando" password="1234" authorities="ROLE_AGENT" />
-				<user name="Mulder" password="fox" authorities="ROLE_SPECIAL_AGENT" />
-				<user name="Scully" password="dana" authorities="ROLE_SPECIAL_AGENT" />
-				<user name="Skinner" password="walter" authorities="ROLE_ ASSISTANT_DIRECTOR" />
+				<user name="Fernando" password="94c0a821ece1959c48dbc789bcf024b9" authorities="ROLE_AGENT" />
+				<user name="Mulder" password="cd2adcfcfae70a64c5870b7f79ae4945"  authorities="ROLE_SPECIAL_AGENT" />
+				<user name="Scully" password="4fb2b097cb9690d77cf7f2246b782fc3" authorities="ROLE_SPECIAL_AGENT" />
+				<user name="Skinner" password="829679019772c945c70602096268737c" authorities="ROLE_ ASSISTANT_DIRECTOR" />
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>	
