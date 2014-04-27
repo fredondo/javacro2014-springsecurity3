@@ -9,8 +9,8 @@
 	<http pattern="/images/*" security="none"/>
 	<http pattern="/css/*" security="none"/>
 	
-	<http auto-config="true">
-		<intercept-url pattern="/**" access="ROLE_SPECIAL_AGENT" requires-channel="https"/>
+	<http auto-config="true" use-expressions="true">
+		<intercept-url pattern="/**" access="isAuthenticated()" requires-channel="https"/>
 		<form-login login-page="/pages/custom-login.jsp" 
 			authentication-failure-url="/pages/custom-login.jsp?login_error" />
 		<logout logout-success-url="/pages/disconnected.jsp" delete-cookies="JSESSIONID" />

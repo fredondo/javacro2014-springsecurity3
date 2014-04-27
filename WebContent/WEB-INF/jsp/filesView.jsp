@@ -35,7 +35,7 @@
 					<td align="center"><b>${file.classified}</b></td>
 					<td>
 						<a href="<c:url value='/xfiles/show/${file.id}'/>">show</a>
-						<sec:authorize ifAnyGranted="ROLE_ESPECIAL_AGENT,ROLE_ASSISTANT_DIRECTOR">
+						<sec:authorize access="hasAnyRole('ROLE_ESPECIAL_AGENT','ROLE_ASSISTANT_DIRECTOR')">
 							<a href="<c:url value='/xfiles/classify?id=${file.id}'/>">classify</a>
 							<a href="<c:url value='/xfiles/declassify?id=${file.id}'/>">declassify</a>
 						</sec:authorize>
