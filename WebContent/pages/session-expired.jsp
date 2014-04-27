@@ -5,7 +5,7 @@
 <html>
   <head>
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-      <link rel="stylesheet" href="<c:url value='/css/estilos.css'/>" type="text/css" />
+      <link rel="stylesheet" href="<c:url value='/css/styles.css'/>" type="text/css" />
       <title>Session Inactivity</title>
   </head>
 <body>
