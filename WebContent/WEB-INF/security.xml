@@ -10,11 +10,15 @@
 	<http pattern="/css/*" security="none"/>
 	
 	<http auto-config="true">
-		<intercept-url pattern="/**" access="ROLE_SPECIAL_AGENT"/>
+		<intercept-url pattern="/**" access="ROLE_SPECIAL_AGENT" requires-channel="https"/>
 		<form-login login-page="/pages/custom-login.jsp" 
 			authentication-failure-url="/pages/custom-login.jsp?login_error" />
 		<logout logout-success-url="/pages/disconnected.jsp"/>
 		<remember-me key="xfiles" token-validity-seconds="86400" />
+		
+		<port-mappings>
+			<port-mapping http="8080" https="8443"/>
+		</port-mappings>
 	</http>
 	
 	<authentication-manager>
