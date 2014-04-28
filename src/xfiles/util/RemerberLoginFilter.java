@@ -17,7 +17,7 @@ public class RemerberLoginFilter extends OncePerRequestFilter {
 			HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
 		String login = request.getParameter("j_username");
-		if(login!=null&&!login.isEmpty()){
+		if(login != null && !login.isEmpty()){
 			System.out.println("RemerberLoginFilter  login:"+login);
 			response.addCookie(new Cookie("SPRING_SECURITY_LAST_USERNAME", login));
 		}
