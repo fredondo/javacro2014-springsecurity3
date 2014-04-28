@@ -2,7 +2,6 @@ package xfiles.util;
 
 import java.util.Calendar;
 import java.util.Collection;
-
 import org.springframework.security.access.AccessDecisionVoter;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.core.Authentication;
